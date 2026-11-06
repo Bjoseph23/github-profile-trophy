@@ -9,9 +9,12 @@ Deno.test("UserInfo calculates total stargazers", () => {
         restrictedContributionsCount: 0,
         totalCommitContributions: 0,
         totalPullRequestReviewContributions: 0,
+        contributionCalendar: { totalContributions: 0 },
       },
       organizations: { totalCount: 0 },
       followers: { totalCount: 0 },
+      following: { totalCount: 0 },
+      starredRepositories: { totalCount: 0 },
     },
     {
       openIssues: { totalCount: 0 },

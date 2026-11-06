@@ -32,11 +32,20 @@ export type GitHubUserActivity = {
     totalCommitContributions: number;
     restrictedContributionsCount: number;
     totalPullRequestReviewContributions: number;
+    contributionCalendar: {
+      totalContributions: number;
+    };
   };
   organizations: {
     totalCount: number;
   };
   followers: {
+    totalCount: number;
+  };
+  following: {
+    totalCount: number;
+  };
+  starredRepositories: {
     totalCount: number;
   };
 };
@@ -49,6 +58,9 @@ export type GitHubUserAll =
 export class UserInfo {
   public readonly totalCommits: number;
   public readonly totalFollowers: number;
+  public readonly totalFollowing: number;
+  public readonly totalStarred: number;
+  public readonly totalContributions: number;
   public readonly totalIssues: number;
   public readonly totalOrganizations: number;
   public readonly totalPullRequests: number;
@@ -119,6 +131,10 @@ export class UserInfo {
 
     this.totalCommits = totalCommits;
     this.totalFollowers = userActivity.followers.totalCount;
+    this.totalFollowing = userActivity.following.totalCount;
+    this.totalStarred = userActivity.starredRepositories.totalCount;
+    this.totalContributions = userActivity.contributionsCollection
+      .contributionCalendar.totalContributions;
     this.totalIssues = userIssue.openIssues.totalCount +
       userIssue.closedIssues.totalCount;
     this.totalOrganizations = userActivity.organizations.totalCount;

@@ -616,3 +616,153 @@ export class TotalRepositoryTrophy extends Trophy {
     this.filterTitles = ["Repo", "Repository", "Repositories"];
   }
 }
+
+export class TotalContributionTrophy extends Trophy {
+  constructor(score: number) {
+    const rankConditions = [
+      new RankCondition(
+        RANK.SSS,
+        "God Contributor",
+        10000,
+      ),
+      new RankCondition(
+        RANK.SS,
+        "Deep Contributor",
+        5000,
+      ),
+      new RankCondition(
+        RANK.S,
+        "Super Contributor",
+        3000,
+      ),
+      new RankCondition(
+        RANK.AAA,
+        "Ultra Contributor",
+        2000,
+      ),
+      new RankCondition(
+        RANK.AA,
+        "Hyper Contributor",
+        1000,
+      ),
+      new RankCondition(
+        RANK.A,
+        "High Contributor",
+        500,
+      ),
+      new RankCondition(
+        RANK.B,
+        "Middle Contributor",
+        100,
+      ),
+      new RankCondition(
+        RANK.C,
+        "First Contribution",
+        1,
+      ),
+    ];
+    super(score, rankConditions);
+    this.title = "Contributions";
+    this.filterTitles = ["Contribution", "Contributions"];
+  }
+}
+
+export class TotalStarredTrophy extends Trophy {
+  constructor(score: number) {
+    const rankConditions = [
+      new RankCondition(
+        RANK.SSS,
+        "God Curator",
+        1000,
+      ),
+      new RankCondition(
+        RANK.SS,
+        "Deep Curator",
+        500,
+      ),
+      new RankCondition(
+        RANK.S,
+        "Super Curator",
+        200,
+      ),
+      new RankCondition(
+        RANK.AAA,
+        "Ultra Curator",
+        100,
+      ),
+      new RankCondition(
+        RANK.AA,
+        "Hyper Curator",
+        50,
+      ),
+      new RankCondition(
+        RANK.A,
+        "High Curator",
+        30,
+      ),
+      new RankCondition(
+        RANK.B,
+        "Middle Curator",
+        10,
+      ),
+      new RankCondition(
+        RANK.C,
+        "First Bookmark",
+        1,
+      ),
+    ];
+    super(score, rankConditions);
+    this.title = "Starred";
+    this.filterTitles = ["Starred", "Stargazer"];
+  }
+}
+
+export class TotalFollowingTrophy extends Trophy {
+  constructor(score: number) {
+    const rankConditions = [
+      new RankCondition(
+        RANK.SSS,
+        "Super Networker",
+        1000,
+      ),
+      new RankCondition(
+        RANK.SS,
+        "Ultra Networker",
+        400,
+      ),
+      new RankCondition(
+        RANK.S,
+        "Hyper Networker",
+        200,
+      ),
+      new RankCondition(
+        RANK.AAA,
+        "Famous Networker",
+        100,
+      ),
+      new RankCondition(
+        RANK.AA,
+        "Active Networker",
+        50,
+      ),
+      new RankCondition(
+        RANK.A,
+        "Dynamic Networker",
+        20,
+      ),
+      new RankCondition(
+        RANK.B,
+        "Many Connections",
+        10,
+      ),
+      new RankCondition(
+        RANK.C,
+        "First Connection",
+        1,
+      ),
+    ];
+    super(score, rankConditions);
+    this.title = "Following";
+    this.filterTitles = ["Following"];
+  }
+}

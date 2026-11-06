@@ -6,11 +6,20 @@ export const queryUserActivity = `
           totalCommitContributions
           restrictedContributionsCount
           totalPullRequestReviewContributions
+          contributionCalendar {
+            totalContributions
+          }
         }
         organizations(first: 1) {
           totalCount
         }
         followers(first: 1) {
+          totalCount
+        }
+        following(first: 1) {
+          totalCount
+        }
+        starredRepositories(first: 1) {
           totalCount
         }
       }
@@ -67,11 +76,20 @@ export const queryUserAll = `
         totalCommitContributions
         restrictedContributionsCount
         totalPullRequestReviewContributions
+        contributionCalendar {
+          totalContributions
+        }
       }
       organizations(first: 1) {
         totalCount
       }
       followers(first: 1) {
+        totalCount
+      }
+      following(first: 1) {
+        totalCount
+      }
+      starredRepositories(first: 1) {
         totalCount
       }
       openIssues: issues(states: OPEN) {
