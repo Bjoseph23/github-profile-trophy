@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: github-profile-trophy
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GITHUB_TOKEN1
+        sync: false
